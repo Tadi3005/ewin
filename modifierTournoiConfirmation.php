@@ -15,7 +15,18 @@ $message = "";
 $tournoi = new Tournoi();
 $tournoi->setTournoiWithId($idTournoi);
 
-if (isset($_POST['validerModificationTournoi']) && isset($_POST['nomTournoi']) && isset($_POST['sportTournoi']) && isset($_POST['nbrJoueur']) && isset($_POST['dateTournoi']) && isset($_POST['dateFinInscription'])) {
+if (isset($_POST['nomTournoi']) && isset($_POST['sportTournoi']) && isset($_POST['nbrJoueur']) && isset($_POST['dateTournoi']) && isset($_POST['dateFinInscription'])) {
+    $nomTournoi = $_POST['nomTournoi'];
+    $sportTournoi = $_POST['sportTournoi'];
+    $nbrJoueur = $_POST['nbrJoueur'];
+    $dateTournoi = $_POST['dateTournoi'];
+    $dateFinInscription = $_POST['dateFinInscription'];
+} else {
+    $message = "Veuillez remplir tous les champs.";
+    header("Location: modifierTournoi.php?id=" . $idTournoi . "&message=" . $message);
+}
+
+if (!empty($_POST['nomTournoi']) && !empty($_POST['sportTournoi']) && !empty($_POST['nbrJoueur']) && !empty($_POST['dateTournoi']) && !empty($_POST['dateFinInscription'])) {
     $nomTournoi = $_POST['nomTournoi'];
     $sportTournoi = $_POST['sportTournoi'];
     $nbrJoueur = $_POST['nbrJoueur'];
