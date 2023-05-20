@@ -1,0 +1,511 @@
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 100%;
+}
+/* Header */
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+.nav {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+.nav li {
+    flex: 1 1 auto;
+    font-size: 1.17em;
+    text-transform: uppercase;
+    height: 100%;
+    text-align: center;
+    margin: 0 10px 0 10px;
+}
+.nav li a {
+    text-decoration: none;
+    color: black;
+}
+li a:hover {
+    color: darkgray;
+}
+
+/* Footer */
+footer {
+    padding: 30px;
+    background: #f1f1f1;
+    margin-top: 100px;
+}
+footer p {
+    color: black;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+input[type=text], input[type=email],
+input[type=password], input[type=number],
+input[type=date], input[type=file], select {
+    margin-bottom: 1rem;
+    width: 300px;
+    height: 30px;
+}
+input:hover {
+    opacity: 0.5;
+}
+button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+    background: black;
+    color: white;
+    margin-top: 10px;
+}
+button:hover {
+    opacity: 0.8;
+}
+.formulaire {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    border: black 1px solid;
+}
+fieldset {
+    padding: 40px ;
+}
+button u {
+    text-decoration: none;
+}
+.mainFormulaire {
+    display: flex;
+    justify-content: center;
+}
+/* Acceuil */
+/* Header */
+#headerAccueilPrincipal {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+#connexionInscription {
+    display: flex;
+}
+#headerAccueilPrincipal a {
+    margin-right: 40px;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #485563 0%, #29323c  51%, #485563  100%);
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+#headerAccueilPrincipal a:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+/* Main */
+#mainAccueil {
+    display: flex;
+    flex-direction: column;
+}
+#lienTousLesTournois {
+    display: block;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    background-image: linear-gradient(to right, #EB3349 0%, #F45C43  51%, #EB3349  100%);
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+#lienTousLesTournois:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Footer */
+#footerAccueilPrincipal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#footerAccueilPrincipal a {
+    color: black;
+}
+/* Connexion Inscription */
+/* Header */
+.headerConnexion {
+    display: flex;
+    justify-content: center;
+}
+.headerInscription {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+/* main */
+#bouttonConnexion {
+    margin-bottom: 20px;
+}
+#lienInscriptionOubliMDP a {
+    margin: 10px;
+}
+.infosConnecte {
+    display: flex;
+    align-items: center;
+}
+.infosConnecte p {
+    margin-right: 10px;
+}
+.messageSucces {
+    margin-top: 2rem;
+    text-align: center;
+    background-color: green;
+    color: white;
+    padding: 1rem;
+}
+.messageErreur{
+    margin-top: 2rem;
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 1rem;
+}
+.formInscription {
+    display: flex;
+    flex-direction: row;
+}
+.formInscription div {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+/* Liste des tournois */
+.listeTournois {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.tournoi {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+.statutTournoi {
+    display: flex;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    width: 30%;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+.infosTournoi {
+    padding: 12px;
+    box-shadow: inset 1px 0 0 0 #e8e8e8,
+    inset -1px -1px 0 0 #e8e8e8
+}
+.infosTournoi:hover {
+    box-shadow: inset 1px 0 0 0 black,
+    inset -1px -1px 0 0 black;
+}
+.nombreJoueur {
+    display: flex;
+    align-items: center;
+}
+.nombreJoueur img {
+    margin-right: 15px;
+}
+.imageSportTournoi {
+    width: 100%;
+}
+#titreListeTournoi {
+    text-align: center;
+    font-size: 40px;
+}
+.nomTournoi a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.dateTournoi {
+    text-transform: uppercase;
+}
+.dateTournoiConteneur {
+    display: flex;
+    align-items: center;
+}
+#rechercheTournoi {
+    width: 200px;
+    height: 0;
+    border-radius: 30px;
+    padding: 20px;
+}
+#rechercheTournoiConteneur {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    align-items: baseline;
+}
+#labelInputRechercheTournoi {
+    display: flex;
+    flex-direction: column;
+}
+#buttonRechercheTournoi {
+    margin-left: 20px;
+    background: white;
+}
+#labelRechercheTournoi {
+    margin-right: 10px;
+}
+#labelMesTournois {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+#mesTournois {
+    width: 40px;
+    height: 40px;
+}
+.filtreTournoi {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+}
+#sportsTournoi, #statutTournoi {
+    width: 180px;
+    height: 50px;
+}
+.rechercheFiltreTournoi {
+    display: flex;
+    align-items: flex-start;
+}
+.sportTournoiTextuel {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+#statutFerme {
+    background-color: #ff5f5f; /* rouge vif */
+}
+#statutOuvert {
+background-color: #7ecb3f; /* vert */
+}
+#statutTermine {
+background-color: #5a8eff; /* bleu */
+}
+#statutEnCours {
+background-color: #ff69b4; /* rose */
+}
+#statutCloture {
+background-color: #ffc107; /* jaune */
+}
+#statutGenere {
+background-color: #00bcd4; /* cyan */
+}
+
+/* Consulter tournoi */
+.titreUpdateStatut {
+    display: flex;
+    justify-content: space-between;
+}
+.titreUpdate {
+    display: flex;
+    width: 50%;
+    align-items: center;
+}
+.titreUpdate h1 {
+    width: 50%;
+}
+.titreUpdate > a {
+    margin: 1rem;
+}
+.infosTournoiConsulterTournoi {
+    padding: 3rem 0 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.infosDateTournoi {
+    display: flex;
+    align-items: center;
+}
+.joueurInfosTournoi {
+    display: flex;
+    align-items: center;
+}
+.listeTournois {
+    display: flex;
+}
+.listeJoueur {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    border: black 1px solid;
+    overflow: auto;
+ }
+.listeJoueur li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem 0 1rem;
+}
+.listeJoueur a {
+    margin-top: 1rem;
+}
+/* Arbre du tournoi */
+.arbre {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    margin: 0;
+    overflow: auto;
+}
+.level {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.rencontre {
+    background-color: #f8f7f7;
+    margin: 10px;
+    padding: 10px;
+    list-style-type: none;
+    width: 10rem;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rencontre li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    list-style-type: none;
+}
+.rencontre li a {
+    text-decoration: none;
+    color: black;
+    padding: 0.1rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+/* Bouton inscription au tournoi */
+.boutonInscriptiontournoi {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+.boutonInscriptiontournoi button {
+    padding: 30px 80px 30px 80px;
+}
+
+.boutonInscriptiontournoi button:hover {
+    background-color: white;
+    color: black;
+}
+
+.validerVainqueur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#aucunArbreGenere {
+    display: flex;
+    border: black 1px solid;
+    padding: 3.5%;
+    justify-content: center;
+}
+
+#messageVainqueurTournoi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #F9FAFB;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#messageVainqueurTournoi p {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.deconnexion {
+    background-color: #6e8ed0;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.deconnexion:hover {
+    background-color: #ffffff;
+    color: #6e8ed0;
+    border: 1px solid #6e8ed0;
+}
+
+@media (max-width: 1020px) {
+    .rechercheFiltreTournoi, .filtreTournoi {
+        flex-direction: column;
+
+    }
+    header {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+}

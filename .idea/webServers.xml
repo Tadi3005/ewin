@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b9c1113c-e9e2-4b98-8952-a054dea90079" name="Panoramix" url="http://192.168.132.203">
+        <fileTransfer rootFolder="/public_html/EVAL_V4" host="192.168.132.203" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
