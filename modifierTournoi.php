@@ -46,6 +46,10 @@ $tournoi->setTournoiWithId($idTournoi);
                 <label for="dateFinInscription">Date fin inscription du tournoi</label><input id="dateFinInscription" name="dateFinInscription" type="date" value="<?php echo $tournoi->getDateFinInscription(); ?>">
                 <button type="submit">Modifier</button>
             </form>
+            <?php
+            if (isset($_GET['message'])) : ?>
+                <p class="messageErreur"><?php echo $_GET['message']; ?></p>
+            <?php endif; ?>
         </section>
     </main>
     <?php require("inc/footer.inc.php"); ?>

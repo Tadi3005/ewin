@@ -42,30 +42,48 @@ if (isset($_POST['validerModificationTournoi']) && isset($_POST['nomTournoi']) &
     $dateTournoi = $_POST['dateTournoi'];
     $dateFinInscription = $_POST['dateFinInscription'];
 
-    $tournoi->setNomTournoi($nomTournoi);
-    switch ($sportTournoi) {
-        case "belotte":
-            $sportTournoi = 1;
-            break;
-        case "jeuEchecs":
-            $sportTournoi = 2;
-            break;
-        case "tennis":
-            $sportTournoi = 3;
-            break;
-        case "pingPong":
-            $sportTournoi = 4;
-            break;
-        case "fifa":
-            $sportTournoi = 5;
-            break;
+    // Vérification des données invalides
+    if ($dateTournoi < $dateFinInscription) {
+        $message = "La date du tournoi doit être supérieure à la date de fin des inscriptions.";
+        header("Location: modifierTournoi.php?id=" . $idTournoi . "&message=" . $message);
+    } elseif ($nbrJoueur < $tournoi->getPlacesDispo()) {
+        $message = "Le nombre de participants ne peut pas être supérieur aux places disponibles.";
+        header("Location: modifierTournoi.php?id=" . $idTournoi . "&message=" . $message);
+    }elseif ($dateFinInscription > date("yyyy-mm-dd")) {
+        $message = "La date de fin des inscriptions doit être supérieure à la date du jour.";
+        header("Location: modifierTournoi.php?id=" . $idTournoi . "&message=" . $message);
+    } elseif ($dateTournoi > date("yyyy-mm-dd")) {
+        $message = "La date du tournoi doit être supérieure à la date du jour.";
+        header("Location: modifierTournoi.php?id=" . $idTournoi . "&message=" . $message);
+    } elseif ($dateTournoi < $dateFinInscription) {
+        $message = "La date du tournoi doit être supérieure à la date de fin des inscriptions.";
+        header("Location: modifierTournoi.php?id=" . $idTournoi . "&message=" . $message);
+    } else {
+        $tournoi->setNomTournoi($nomTournoi);
+        switch ($sportTournoi) {
+            case "belotte":
+                $sportTournoi = 1;
+                break;
+            case "jeuEchecs":
+                $sportTournoi = 2;
+                break;
+            case "tennis":
+                $sportTournoi = 3;
+                break;
+            case "pingPong":
+                $sportTournoi = 4;
+                break;
+            case "fifa":
+                $sportTournoi = 5;
+                break;
+        }
+        $tournoi->setSport($sportTournoi);
+        $tournoi->setNbrJoueur($nbrJoueur);
+        $tournoi->setDateTournoi($dateTournoi);
+        $tournoi->setDateFinInscription($dateFinInscription);
+        $tournoi->updateTournoi();
+        header("Location: consulterTournoi.php?id=" . $idTournoi);
     }
-    $tournoi->setSport($sportTournoi);
-    $tournoi->setNbrJoueur($nbrJoueur);
-    $tournoi->setDateTournoi($dateTournoi);
-    $tournoi->setDateFinInscription($dateFinInscription);
-    $tournoi->updateTournoi();
-    header("Location: consulterTournoi.php?id=" . $idTournoi);
 } else if (isset($_POST['annulerModificationTournoi'])) {
     header("Location: consulterTournoi.php?id=" . $idTournoi);
 }
@@ -86,6 +104,9 @@ if (isset($_POST['validerModificationTournoi']) && isset($_POST['nomTournoi']) &
 <?php require("inc/header.inc.php"); ?>
 
 <main>
+    <?php if (!empty($message)) : ?>
+        <p class="error-message"><?php echo $message; ?></p>
+    <?php endif; ?>
     <form action="" method="post">
         <h1> Voulez-vous vraiment modifier ce tournoi ? </h1>
         <input type="hidden" name="nomTournoi" value="<?php echo $nomTournoi ?>">
