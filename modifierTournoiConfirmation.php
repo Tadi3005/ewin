@@ -15,26 +15,6 @@ $message = "";
 $tournoi = new Tournoi();
 $tournoi->setTournoiWithId($idTournoi);
 
-if(isset($_POST['nomTournoi'])) {
-    $nomTournoi = $_POST['nomTournoi'];
-}
-
-if(isset($_POST['sportTournoi'])) {
-    $sportTournoi = $_POST['sportTournoi'];
-}
-
-if(isset($_POST['nbrJoueur'])) {
-    $nbrJoueur = $_POST['nbrJoueur'];
-}
-
-if(isset($_POST['dateTournoi'])) {
-    $dateTournoi = $_POST['dateTournoi'];
-}
-
-if(isset($_POST['dateFinInscription'])) {
-    $dateFinInscription = $_POST['dateFinInscription'];
-}
-
 if (isset($_POST['validerModificationTournoi']) && isset($_POST['nomTournoi']) && isset($_POST['sportTournoi']) && isset($_POST['nbrJoueur']) && isset($_POST['dateTournoi']) && isset($_POST['dateFinInscription'])) {
     $nomTournoi = $_POST['nomTournoi'];
     $sportTournoi = $_POST['sportTournoi'];
